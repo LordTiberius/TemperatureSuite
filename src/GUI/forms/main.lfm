@@ -1,0 +1,100 @@
+object frmMain: TfrmMain
+  Left = 312
+  Height = 501
+  Top = 156
+  Width = 755
+  Caption = 'Temperature Dashboard'
+  ClientHeight = 501
+  ClientWidth = 755
+  Color = 4342338
+  Menu = MainMenu
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  Position = poScreenCenter
+  LCLVersion = '1.4.2.0'
+  WindowState = wsMaximized
+  object lblHeading: TLabel
+    Left = 0
+    Height = 33
+    Top = 0
+    Width = 755
+    Align = alTop
+    Alignment = taCenter
+    Caption = 'Temperature Dashboard'
+    Font.Color = 26879
+    Font.Height = -27
+    Font.Name = 'Sans'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Button1: TButton
+    Left = 152
+    Height = 25
+    Top = 76
+    Width = 75
+    Caption = 'Button1'
+    Color = 4342338
+    Font.Color = 26111
+    ParentFont = False
+    TabOrder = 0
+  end
+  object MainMenu: TMainMenu
+    left = 60
+    top = 428
+    object pmiFile: TMenuItem
+      Caption = 'File'
+      Visible = False
+      object miLoadData: TMenuItem
+        Action = acLoadData
+      end
+      object miSep1: TMenuItem
+        Caption = '-'
+      end
+      object miQuit: TMenuItem
+        Caption = 'Quit Temperature Dashboard'
+      end
+    end
+    object pmiView: TMenuItem
+      Caption = 'View'
+      Visible = False
+      object miShowMainMenu: TMenuItem
+        Action = acShowHideMainMenu
+        Caption = 'Show main menu'
+        Checked = True
+      end
+    end
+    object pmiExtras: TMenuItem
+      Caption = 'Extras'
+      Visible = False
+      object miSettings: TMenuItem
+        Caption = 'Settings'
+      end
+    end
+    object pmiHelp: TMenuItem
+      Caption = 'Help'
+      Visible = False
+      object miAbout: TMenuItem
+        Caption = 'About TemperatureDashboard ...'
+      end
+    end
+  end
+  object ActionList: TActionList
+    left = 140
+    top = 428
+    object acShowHideMainMenu: TAction
+      Caption = 'acShowHideMainMenu'
+      OnExecute = acShowHideMainMenuExecute
+      ShortCut = 16461
+    end
+    object acLoadData: TAction
+      Caption = 'Load data ...'
+      OnExecute = acLoadDataExecute
+      ShortCut = 16463
+    end
+  end
+  object OpenMeasurementsDialog: TOpenDialog
+    Filter = 'Measurements Data File (*.dat)|*.dat|All files (*.*)|*.*'
+    left = 228
+    top = 428
+  end
+end
